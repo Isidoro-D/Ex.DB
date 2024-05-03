@@ -1,0 +1,30 @@
+Questão 2:
+
+MariaDB [mundo]> SELECT*FROM Cidade WHERE CASE WHEN Capital = 'S' THEN 1 ELSE 0 END;
++--------+-------------+-----------+------+---------+
+| Pais   | Nome        | ID_Cidade | Pop  | Capital |
++--------+-------------+-----------+------+---------+
+| USA    | Washington  |         1 |  3.3 | S       |
+| Brasil | Brasilia    |         3 |  1.5 | S       |
+| Canada | Ottawa      |         5 |  0.8 | S       |
+| M?xico | Cid. M?xico |         6 | 14.1 | S       |
++--------+-------------+-----------+------+---------+
+4 rows in set (0.000 sec)
+
+-----------------------------------------
+
+Questão 3:
+
+MariaDB [mundo]> SELECT*FROM Pais WHERE CASE WHEN Expec_Vida < '70' THEN 1 ELSE 0 END;
++--------+---------+------------+-------+-------+------------+
+| Nome   | ID_Pais | Continente | Pop   | PIB   | Expec_vida |
++--------+---------+------------+-------+-------+------------+
+| M?xico |       2 | AM. Norte  | 107.5 |   694 |       69.1 |
+| Brasil |       3 | AM. Sul    | 183.3 | 10004 |       65.2 |
++--------+---------+------------+-------+-------+------------+
+2 rows in set (0.000 sec)
+
+-----------------------------------------
+
+Questão 6:
+

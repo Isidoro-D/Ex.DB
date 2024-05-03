@@ -1,0 +1,166 @@
+QUESTÃO 1:
+
+SELECT C.Name, S.Specie_Name FROM `Character` AS C INNER JOIN Specie AS S ON C.Specie = S.Specie_id;
++--------------------+-------------------------+
+| Name               | Specie_Name             |
++--------------------+-------------------------+
+| Gary Goodspeed     | Human                   |
+| Quinn Ergon        | Human                   |
+| Sheryl Goodspeed   | Human                   |
+| John Goodspeed     | Human                   |
+| Shannon Thunder    | Human                   |
+| Little Cato        | Ventrexian              |
+| Avocato            | Ventrexian              |
+| Queen of Ventrexia | Ventrexian              |
+| King of Ventrexia  | Ventrexian              |
+| Meowlape?o         | Ventrexian              |
+| KVN                | Robot                   |
+| Mega-KVN           | Robot                   |
+| Ash Graven         | Serepentian             |
+| Harp Graven        | Serepentian             |
+| Fox                | Tryvuulian              |
+| H.U.E              | Artificial Intelligence |
+| A.V.A              | Artificial Intelligence |
+| Bolo               | Titan                   |
+| Invictus           | Titan                   |
+| Oreskis"           | Titan                   |
+| Evra               | Energy being            |
+| Fraskenhaur        | Alien                   |
+| Melanie Dewinter   | Hooblot                 |
+| David Dewinter     | Hooblot                 |
+| Biskit             | Tiger Tiger             |
++--------------------+-------------------------+
+
+--------------------------------------------------------------
+
+QUESTÃO 2:
+
+MariaDB [final_space_db]> SELECT C.Name, L.Location_Name FROM `Character` AS C INNER JOIN Location AS L ON C.Origin = L.Location_id;
++-----------------------+----------------+
+| Name                  | Location_Name  |
++-----------------------+----------------+
+| Gary Goodspeed        | Earth          |
+| Quinn Ergon           | Earth          |
+| KVN                   | Earth          |
+| Sheryl Goodspeed      | Earth          |
+| John Goodspeed        | Earth          |
+| Mega-KVN              | Earth          |
+| Shannon Thunder       | Earth          |
+| Bolo                  | Final Space    |
+| Invictus              | Final Space    |
+| Evra                  | Final Space    |
+| Oreskis"              | Final Space    |
+| Melanie Dewinter      | Tera Con Prime |
+| David Dewinter        | Tera Con Prime |
+| Meowlape?o            | Tera Con Prime |
+| Ash Graven            | Serepentis     |
+| Harp Graven           | Serepentis     |
+| Little Cato           | Ventrexia      |
+| Avocato               | Ventrexia      |
+| Queen of Ventrexia    | Ventrexia      |
+| King of Ventrexia     | Ventrexia      |
+| Fox                   | Tryvuulian     |
+| Tribore Menendez      | Hatched        |
+| Quatronostro Menendez | Hatched        |
++-----------------------+----------------+
+
+--------------------------------------------------------------
+
+QUESTÃO 3:
+
+SELECT C.Name, L.Location_Name, S.Specie_Name FROM `Character` AS C INNER JOIN Location AS L ON C.Origin = L.Location_id INNER JOIN SPECIE AS S ON C.Specie = S.Specie_id;
++--------------------+----------------+--------------+
+| Name               | Location_Name  | Specie_Name  |
++--------------------+----------------+--------------+
+| Gary Goodspeed     | Earth          | Human        |
+| Quinn Ergon        | Earth          | Human        |
+| KVN                | Earth          | Robot        |
+| Sheryl Goodspeed   | Earth          | Human        |
+| John Goodspeed     | Earth          | Human        |
+| Mega-KVN           | Earth          | Robot        |
+| Shannon Thunder    | Earth          | Human        |
+| Bolo               | Final Space    | Titan        |
+| Invictus           | Final Space    | Titan        |
+| Evra               | Final Space    | Energy being |
+| Oreskis"           | Final Space    | Titan        |
+| Melanie Dewinter   | Tera Con Prime | Hooblot      |
+| David Dewinter     | Tera Con Prime | Hooblot      |
+| Meowlape?o         | Tera Con Prime | Ventrexian   |
+| Ash Graven         | Serepentis     | Serepentian  |
+| Harp Graven        | Serepentis     | Serepentian  |
+| Little Cato        | Ventrexia      | Ventrexian   |
+| Avocato            | Ventrexia      | Ventrexian   |
+| Queen of Ventrexia | Ventrexia      | Ventrexian   |
+| King of Ventrexia  | Ventrexia      | Ventrexian   |
+| Fox                | Tryvuulian     | Tryvuulian   |
++--------------------+----------------+--------------+
+
+--------------------------------------------------------------
+
+QUESTÃO 4:
+
+SELECT S.Specie_Name AS Especie, COUNT(C.Name) AS Quantidade FROM `Character` AS C INNER JOIN Specie AS S ON C.Specie = S.Specie_id GROUP BY S.Specie_Name ORDER BY Quantidade;
++-------------------------+------------+
+| Especie                 | Quantidade |
++-------------------------+------------+
+| Tryvuulian              |          1 |
+| Alien                   |          1 |
+| Energy being            |          1 |
+| Tiger Tiger             |          1 |
+| Artificial Intelligence |          2 |
+| Hooblot                 |          2 |
+| Serepentian             |          2 |
+| Robot                   |          2 |
+| Titan                   |          3 |
+| Ventrexian              |          5 |
+| Human                   |          5 |
++-------------------------+------------+
+
+--------------------------------------------------------------
+
+QUESTÃO 5:
+
+SELECT L.Location_Name AS `Local de Origem`, COUNT(C.name) AS Quantidade FROM `Character` AS C INNER JOIN Location AS L ON C.Origin = L.Location_id GROUP BY L.Location_Name ORDER BY Quantidade DESC;
++-----------------+------------+
+| Local de Origem | Quantidade |
++-----------------+------------+
+| Earth           |          7 |
+| Final Space     |          4 |
+| Ventrexia       |          4 |
+| Tera Con Prime  |          3 |
+| Serepentis      |          2 |
+| Hatched         |          2 |
+| Tryvuulian      |          1 |
++-----------------+------------+
+
+--------------------------------------------------------------
+
+QUESTÃO 6:
+
+SELECT C.Name, L.Location_Name FROM `Character`AS C INNER JOIN Location AS L ON C.Origin = L.location_id WHERE L.Location_Name = 'Earth' ORDER BY C.name;
++------------------+---------------+
+| Name             | Location_Name |
++------------------+---------------+
+| Gary Goodspeed   | Earth         |
+| John Goodspeed   | Earth         |
+| KVN              | Earth         |
+| Mega-KVN         | Earth         |
+| Quinn Ergon      | Earth         |
+| Shannon Thunder  | Earth         |
+| Sheryl Goodspeed | Earth         |
++------------------+---------------+
+
+--------------------------------------------------------------
+
+QUESTÃO 7:
+
+SELECT C.Name, L.Location_Name, S.Specie_Name FROM `Character`AS C INNER JOIN Location AS L ON C.Origin = L.Location_id INNER JOIN Specie AS S ON C.Specie = S.Specie_id WHERE Specie_Name = 'Ventrexian' ORDER BY C.Name DESC;
++--------------------+----------------+-------------+
+| Name               | Location_Name  | Specie_Name |
++--------------------+----------------+-------------+
+| Queen of Ventrexia | Ventrexia      | Ventrexian  |
+| Meowlape?o         | Tera Con Prime | Ventrexian  |
+| Little Cato        | Ventrexia      | Ventrexian  |
+| King of Ventrexia  | Ventrexia      | Ventrexian  |
+| Avocato            | Ventrexia      | Ventrexian  |
++--------------------+----------------+-------------+
