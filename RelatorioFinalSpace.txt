@@ -1,0 +1,235 @@
+QUESTÃO 1:
+
+SELECT C.Character_id, C.Name, S.Specie_id, S.Specie_Name FROM `Character` AS C LEFT JOIN Specie AS S ON C.Specie = S.Specie_id;
++--------------+-----------------------+-----------+-------------------------+
+| Character_id | Name                  | Specie_id | Specie_Name             |
++--------------+-----------------------+-----------+-------------------------+
+|            1 | Gary Goodspeed        |         1 | Human                   |
+|            2 | Mooncake              |      NULL | NULL                    |
+|            3 | Quinn Ergon           |         1 | Human                   |
+|            4 | Little Cato           |         2 | Ventrexian              |
+|            5 | Avocato               |         2 | Ventrexian              |
+|            6 | KVN                   |         3 | Robot                   |
+|            7 | Ash Graven            |         4 | Serepentian             |
+|            8 | Fox                   |         5 | Tryvuulian              |
+|            9 | H.U.E                 |         6 | Artificial Intelligence |
+|           10 | Tribore Menendez      |      NULL | NULL                    |
+|           11 | Clarence              |      NULL | NULL                    |
+|           12 | Biskit                |        14 | Tiger Tiger             |
+|           13 | Quatronostro Menendez |      NULL | NULL                    |
+|           14 | Lord Commander        |      NULL | NULL                    |
+|           15 | Sheryl Goodspeed      |         1 | Human                   |
+|           16 | Bolo                  |         7 | Titan                   |
+|           17 | Invictus              |         7 | Titan                   |
+|           18 | John Goodspeed        |         1 | Human                   |
+|           19 | A.V.A                 |         6 | Artificial Intelligence |
+|           20 | Evra                  |         9 | Energy being            |
+|           21 | Queen of Ventrexia    |         2 | Ventrexian              |
+|           22 | King of Ventrexia     |         2 | Ventrexian              |
+|           23 | Mega-KVN              |         3 | Robot                   |
+|           24 | Melanie Dewinter      |        11 | Hooblot                 |
+|           25 | Harp Graven           |         4 | Serepentian             |
+|           26 | Shannon Thunder       |         1 | Human                   |
+|           27 | David Dewinter        |        11 | Hooblot                 |
+|           28 | Meowlape?o            |         2 | Ventrexian              |
+|           29 | Fraskenhaur           |        10 | Alien                   |
+|           30 | Oreskis"              |         7 | Titan                   |
++--------------+-----------------------+-----------+-------------------------+
+
+-----------------------------------------------------------------------------------------
+
+QUESTÃO 2:
+
+SELECT C.Character_id, C.Name, L.Location_id, L.Location_Name FROM `Character` AS C LEFT JOIN Location AS L ON C.Origin = L.Location_id;
++--------------+-----------------------+-------------+----------------+
+| Character_id | Name                  | Location_id | Location_Name  |
++--------------+-----------------------+-------------+----------------+
+|            1 | Gary Goodspeed        |           1 | Earth          |
+|            2 | Mooncake              |        NULL | NULL           |
+|            3 | Quinn Ergon           |           1 | Earth          |
+|            4 | Little Cato           |          11 | Ventrexia      |
+|            5 | Avocato               |          11 | Ventrexia      |
+|            6 | KVN                   |           1 | Earth          |
+|            7 | Ash Graven            |          10 | Serepentis     |
+|            8 | Fox                   |          13 | Tryvuulian     |
+|            9 | H.U.E                 |        NULL | NULL           |
+|           10 | Tribore Menendez      |          14 | Hatched        |
+|           11 | Clarence              |        NULL | NULL           |
+|           12 | Biskit                |        NULL | NULL           |
+|           13 | Quatronostro Menendez |          14 | Hatched        |
+|           14 | Lord Commander        |        NULL | NULL           |
+|           15 | Sheryl Goodspeed      |           1 | Earth          |
+|           16 | Bolo                  |           2 | Final Space    |
+|           17 | Invictus              |           2 | Final Space    |
+|           18 | John Goodspeed        |           1 | Earth          |
+|           19 | A.V.A                 |        NULL | NULL           |
+|           20 | Evra                  |           2 | Final Space    |
+|           21 | Queen of Ventrexia    |          11 | Ventrexia      |
+|           22 | King of Ventrexia     |          11 | Ventrexia      |
+|           23 | Mega-KVN              |           1 | Earth          |
+|           24 | Melanie Dewinter      |           3 | Tera Con Prime |
+|           25 | Harp Graven           |          10 | Serepentis     |
+|           26 | Shannon Thunder       |           1 | Earth          |
+|           27 | David Dewinter        |           3 | Tera Con Prime |
+|           28 | Meowlape?o            |           3 | Tera Con Prime |
+|           29 | Fraskenhaur           |        NULL | NULL           |
+|           30 | Oreskis"              |           2 | Final Space    |
++--------------+-----------------------+-------------+----------------+
+
+-----------------------------------------------------------------------------------------
+
+QUESTÃO 3:
+
+SELECT C.Character_id, C.Name, S.Specie_id, S.Specie_Name FROM `Character` AS C RIGHT JOIN Specie AS S ON C.Specie = S.Specie_id;
++--------------+--------------------+-----------+-------------------------+
+| Character_id | Name               | Specie_id | Specie_Name             |
++--------------+--------------------+-----------+-------------------------+
+|            1 | Gary Goodspeed     |         1 | Human                   |
+|            3 | Quinn Ergon        |         1 | Human                   |
+|           15 | Sheryl Goodspeed   |         1 | Human                   |
+|           18 | John Goodspeed     |         1 | Human                   |
+|           26 | Shannon Thunder    |         1 | Human                   |
+|            4 | Little Cato        |         2 | Ventrexian              |
+|            5 | Avocato            |         2 | Ventrexian              |
+|           21 | Queen of Ventrexia |         2 | Ventrexian              |
+|           22 | King of Ventrexia  |         2 | Ventrexian              |
+|           28 | Meowlape?o         |         2 | Ventrexian              |
+|            6 | KVN                |         3 | Robot                   |
+|           23 | Mega-KVN           |         3 | Robot                   |
+|            7 | Ash Graven         |         4 | Serepentian             |
+|           25 | Harp Graven        |         4 | Serepentian             |
+|            8 | Fox                |         5 | Tryvuulian              |
+|            9 | H.U.E              |         6 | Artificial Intelligence |
+|           19 | A.V.A              |         6 | Artificial Intelligence |
+|           16 | Bolo               |         7 | Titan                   |
+|           17 | Invictus           |         7 | Titan                   |
+|           30 | Oreskis"           |         7 | Titan                   |
+|         NULL | NULL               |         8 | Cosmic Entity           |
+|           20 | Evra               |         9 | Energy being            |
+|           29 | Fraskenhaur        |        10 | Alien                   |
+|           24 | Melanie Dewinter   |        11 | Hooblot                 |
+|           27 | David Dewinter     |        11 | Hooblot                 |
+|         NULL | NULL               |        12 | Cyborg                  |
+|         NULL | NULL               |        13 | Fire Snake              |
+|           12 | Biskit             |        14 | Tiger Tiger             |
++--------------+--------------------+-----------+-------------------------+
+
+-----------------------------------------------------------------------------------------
+
+QUESTÃO 4:
+
+SELECT C.Character_id, C.Name, L.Location_id, L.Location_Name FROM `Character` AS C RIGHT JOIN Location AS L ON C.Origin = L.Location_id;
++--------------+-----------------------+-------------+-------------------------+
+| Character_id | Name                  | Location_id | Location_Name           |
++--------------+-----------------------+-------------+-------------------------+
+|            1 | Gary Goodspeed        |           1 | Earth                   |
+|            3 | Quinn Ergon           |           1 | Earth                   |
+|            6 | KVN                   |           1 | Earth                   |
+|           15 | Sheryl Goodspeed      |           1 | Earth                   |
+|           18 | John Goodspeed        |           1 | Earth                   |
+|           23 | Mega-KVN              |           1 | Earth                   |
+|           26 | Shannon Thunder       |           1 | Earth                   |
+|           16 | Bolo                  |           2 | Final Space             |
+|           17 | Invictus              |           2 | Final Space             |
+|           20 | Evra                  |           2 | Final Space             |
+|           30 | Oreskis"              |           2 | Final Space             |
+|           24 | Melanie Dewinter      |           3 | Tera Con Prime          |
+|           27 | David Dewinter        |           3 | Tera Con Prime          |
+|           28 | Meowlape?o            |           3 | Tera Con Prime          |
+|         NULL | NULL                  |           4 | Inner Space             |
+|         NULL | NULL                  |           5 | Yarno                   |
+|         NULL | NULL                  |           6 | Dark Zone               |
+|         NULL | NULL                  |           7 | Deathcropolis           |
+|         NULL | NULL                  |           8 | Lazarus Trap            |
+|         NULL | NULL                  |           9 | The Order of the Twelve |
+|            7 | Ash Graven            |          10 | Serepentis              |
+|           25 | Harp Graven           |          10 | Serepentis              |
+|            4 | Little Cato           |          11 | Ventrexia               |
+|            5 | Avocato               |          11 | Ventrexia               |
+|           21 | Queen of Ventrexia    |          11 | Ventrexia               |
+|           22 | King of Ventrexia     |          11 | Ventrexia               |
+|         NULL | NULL                  |          12 | Invictus Prison         |
+|            8 | Fox                   |          13 | Tryvuulian              |
+|           10 | Tribore Menendez      |          14 | Hatched                 |
+|           13 | Quatronostro Menendez |          14 | Hatched                 |
++--------------+-----------------------+-------------+-------------------------+
+
+-----------------------------------------------------------------------------------------
+
+QUESTÃO 5:
+
+SELECT C.Name AS `Character`, IFNULL(S.Specie_Name, 'Unknown') AS 'Specie' FROM `Character` AS C LEFT JOIN Specie AS S ON C.Specie = S.Specie_id;
++-----------------------+-------------------------+
+| Character             | Specie                  |
++-----------------------+-------------------------+
+| Gary Goodspeed        | Human                   |
+| Mooncake              | Unknown                 |
+| Quinn Ergon           | Human                   |
+| Little Cato           | Ventrexian              |
+| Avocato               | Ventrexian              |
+| KVN                   | Robot                   |
+| Ash Graven            | Serepentian             |
+| Fox                   | Tryvuulian              |
+| H.U.E                 | Artificial Intelligence |
+| Tribore Menendez      | Unknown                 |
+| Clarence              | Unknown                 |
+| Biskit                | Tiger Tiger             |
+| Quatronostro Menendez | Unknown                 |
+| Lord Commander        | Unknown                 |
+| Sheryl Goodspeed      | Human                   |
+| Bolo                  | Titan                   |
+| Invictus              | Titan                   |
+| John Goodspeed        | Human                   |
+| A.V.A                 | Artificial Intelligence |
+| Evra                  | Energy being            |
+| Queen of Ventrexia    | Ventrexian              |
+| King of Ventrexia     | Ventrexian              |
+| Mega-KVN              | Robot                   |
+| Melanie Dewinter      | Hooblot                 |
+| Harp Graven           | Serepentian             |
+| Shannon Thunder       | Human                   |
+| David Dewinter        | Hooblot                 |
+| Meowlape?o            | Ventrexian              |
+| Fraskenhaur           | Alien                   |
+| Oreskis"              | Titan                   |
++-----------------------+-------------------------+
+
+-----------------------------------------------------------------------------------------
+
+QUESTÃO 6:
+
+SELECT IFNULL(C.Name, 'Unknown') AS `Character`, L.Location_Name AS Local FROM `Character` AS C RIGHT JOIN Location AS L ON C.Origin = L.Location_id;
++-----------------------+-------------------------+
+| Character             | Local                   |
++-----------------------+-------------------------+
+| Gary Goodspeed        | Earth                   |
+| Quinn Ergon           | Earth                   |
+| KVN                   | Earth                   |
+| Sheryl Goodspeed      | Earth                   |
+| John Goodspeed        | Earth                   |
+| Mega-KVN              | Earth                   |
+| Shannon Thunder       | Earth                   |
+| Bolo                  | Final Space             |
+| Invictus              | Final Space             |
+| Evra                  | Final Space             |
+| Oreskis"              | Final Space             |
+| Melanie Dewinter      | Tera Con Prime          |
+| David Dewinter        | Tera Con Prime          |
+| Meowlape?o            | Tera Con Prime          |
+| Unknown               | Inner Space             |
+| Unknown               | Yarno                   |
+| Unknown               | Dark Zone               |
+| Unknown               | Deathcropolis           |
+| Unknown               | Lazarus Trap            |
+| Unknown               | The Order of the Twelve |
+| Ash Graven            | Serepentis              |
+| Harp Graven           | Serepentis              |
+| Little Cato           | Ventrexia               |
+| Avocato               | Ventrexia               |
+| Queen of Ventrexia    | Ventrexia               |
+| King of Ventrexia     | Ventrexia               |
+| Unknown               | Invictus Prison         |
+| Fox                   | Tryvuulian              |
+| Tribore Menendez      | Hatched                 |
+| Quatronostro Menendez | Hatched                 |
++-----------------------+-------------------------+
